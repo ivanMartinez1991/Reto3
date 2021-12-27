@@ -1,0 +1,55 @@
+.button{
+    &-iniciar-sesion{
+        padding:15px;
+        width: 55%;
+        color: white;
+        background-color:$color-primary;
+        border: none;
+        font-weight: 500;
+        font-size: 1.8rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all .3s;
+
+        &:hover{
+            background-color: $color-primary-dark;
+            transform:translateY(-3px);
+            box-shadow:0 2.5rem 4rem rgba(rgb(48, 48, 48), .4);
+        }
+
+        &:active{
+            transform:translateY(0);
+            box-shadow:0 2rem 4rem rgba(rgb(48, 48, 48), .6);
+        }
+    }
+
+    &-registrarse{
+        padding:15px;
+        width: 55%;
+        color: white;
+        background-color:$color-secondary;
+        border: none;
+        font-weight: 500;
+        font-size: 1.8rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all .3s;
+
+        &:hover{
+            transform:translateY(-3px);
+            box-shadow:0 2.5rem 4rem rgba(rgb(48, 48, 48), .6);
+        }
+
+        &:active{
+            transform:translateY(0);
+            box-shadow:0 2rem 4rem rgba(rgb(48, 48, 48), .8);
+        }
+    }
+
+    
+
+}
+
+
+
+

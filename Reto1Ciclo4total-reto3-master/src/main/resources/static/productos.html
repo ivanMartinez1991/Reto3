@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/estilos2.css">
+    <link rel="stylesheet" href="./css/pages/panel.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/productos.css">
+ 
+    <title>Usuarios</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header__container">
+
+            <a href="index.html">
+                <img src="img/logo.png" alt="Logo" width="70">
+            </a>
+
+            <ul class="header__container__lista-ingresar">
+                <a href="users.html">
+                    <li class="header__container__lista-ingresar__i-usuario">Usuarios</li>
+                </a>
+
+                <a href="register.html">
+                    <li class="header__container__lista-ingresar__i-registrarse">Registrarse</li>
+                </a>
+
+                <a href="login.html">
+                    <li class="header__container__lista-ingresar__i-sesion">Iniciar Sesion &rarr;</li>
+                </a>
+
+            </ul>
+        </div>
+    </header>
+
+
+
+
+
+    <div class="box-panel">
+
+        <div class="navbar-user">
+           
+            <img class="user-icon" src="./img/user.png" alt="">
+            <p id="userName"></p>
+            <p id="userEmail"></p>
+           
+            <ul class="mt-4">
+                <li><a href="users.html">Usuarios</a></li>
+                <li><a href="productos.html">Productos</a></li>
+            </ul>
+
+            <div class="box-log-out">
+                <img src="./img/cerrar-sesion.png" alt="" class="log-out-icon">
+            </div>
+        </div>
+
+        <div class="content">
+            
+            <div class="box-catalog-me">
+                <img class="img-catalogo" src="./img/catalogo.jpg" alt="">
+                <div class="box-message">
+                <h2 class="title-catalogo mb-5">Agrega Productos</h2>
+                <p class="p-catalog">Añade , Actualiza y elimina productos , haz que tu tienda luzca increible como una gran vitrina fisica</p>
+                </div>
+            </div>
+
+           <div class="box-catalog-form">
+
+            <div class="box-each-content">
+                <h2 class="title-input">Referencia</h2>
+                <input type="text" id="value-refer" class="box__input--values" placeholder="Referencia">
+            </div>
+            <div class="box-each-content">
+                <h2 class="title-input">Marca</h2>
+                <input type="text" id="value-brand" class="box__input--values" placeholder="Marca">
+            </div>
+            <div class="box-each-content">
+                <h2 class="title-input">Categoria</h2>
+                <input type="text" id="value-category" class="box__input--values" placeholder="Categoria ">
+            </div>
+            <div class="box-each-content">
+                <h2 class="title-input">Descripcion</h2>
+                <input type="text" id="value-description" class="box__input--values" placeholder="Descripcion">
+            </div>
+            <div class="box-each-content">
+                <h2 class="title-input">Precio</h2>
+                <input type="number" id="value-price" class="box__input--values" placeholder="Precio">
+            </div>
+            <div class="box-box-input">
+                <h2>Disponibilidad</h2>
+                <select id="value-avaible" class="box__input--values">
+                  <option value="true">SI</option>
+                  <option value="false">NO</option>
+                 
+                </select>
+              </div>
+            <div class="box-each-content">
+                <h2 class="title-input">Cantidad</h2>
+                <input type="number" id="value-quantity" class="box__input--values" placeholder="Cantidad">
+            </div>
+            <div class="box-each-content">
+                <h2 class="title-input">Fotografia</h2>
+                <input type="text" id="value-photo" class="box__input--values" placeholder="Fotografia">
+            </div>
+
+            <div class="container grp-btn">
+                <button onclick="registrarProductos()" class="button btn btn-primary">Agregar</button>
+                <button onclick="DataProductos()" class="button  btn btn-success ">Consultar</button>
+                <button onclick="ActualizarProducto()" class="button btn btn-warning">Actualizar</button>
+            </div>
+
+            
+
+           </div>
+
+            <div id="datos-tabla">
+                <table id="data-product" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <td>Referencia</td>
+                            <td>Marca</td>
+                            <td>Categoria</td>
+                            <td>Descripcion</td>
+                            <td>Precio</td>
+                            <td>Disponibilidad</td>
+                            <td>Cantidad</td>
+                            <td>Imagen</td>
+                        </tr>
+                    </thead>
+
+                    <tbody id="content-to-add">
+                        
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+            
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="js/verificarSesion.js"></script>
+    <script src="js/productos.js"></script>  
+    <script src="js/cerrarSesion.js"></script>
+
+    <script>
+    const user = JSON.parse(localStorage.getItem("user"))
+    document.getElementById('userName').innerHTML = user.name
+    document.getElementById('userEmail').innerHTML = user.email
+    </script>
+</body>
+</html>
